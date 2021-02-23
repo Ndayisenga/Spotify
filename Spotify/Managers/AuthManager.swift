@@ -13,9 +13,19 @@ final class AuthManager {
     struct Constants {
         static let clientID = "c011e2d202df4c95a48be49817a82ec4"
         static let clientSecret = "b015b60e03504a4abc48704729489299"
+        
     }
     
     private init() {}
+    
+    public var signInURL: URL? {
+        let scopes = "user-read-private"
+        let redirectURI = "https://blesseddairies.wixsite.com/rvit"
+        let base = "https://accounts.spotify.com/authorize"
+        let string = "\(base)?response_type=code&client_id=\(Constants.clientID)&scope=\(scopes)&redirect_uri=\(redirectURI)"
+        return URL(string: string)
+    }
+    
     var isSignedIn: Bool {
         return false
     }
