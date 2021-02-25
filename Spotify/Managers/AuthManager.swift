@@ -14,16 +14,17 @@ final class AuthManager {
         static let clientID = "c011e2d202df4c95a48be49817a82ec4"
         static let clientSecret = "b015b60e03504a4abc48704729489299"
         static let tokenAPIURL = "https://accounts.spotify.com/api/token"
+        static let redirectURI = "https://blesseddairies.wixsite.com/rvit"
+        static let scopes = "user-read-private"
         
     }
     
     private init() {}
     
     public var signInURL: URL? {
-        let scopes = "user-read-private"
-        let redirectURI = "https://blesseddairies.wixsite.com/rvit"
+        
         let base = "https://accounts.spotify.com/authorize"
-        let string = "\(base)?response_type=code&client_id=\(Constants.clientID)&scope=\(scopes)&redirect_uri=\(redirectURI)&show_dialog=TRUE"
+        let string = "\(base)?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes)&redirect_uri=\(Constants.redirectURI)&show_dialog=TRUE"
         return URL(string: string)
     }
     
@@ -62,7 +63,7 @@ final class AuthManager {
         components.queryItems = [ URLQueryItem(name: "grant_type", value: "authorization_code"),
                                   
             URLQueryItem(name: "code", value: code),
-            URLQueryItem(name: "redirect_uri", value: "https://blesseddairies.wixsite.com/rvit"),
+            URLQueryItem(name: "redirect_uri", value: Constants.redirectURI),
                                   
         ]
         
@@ -100,10 +101,10 @@ final class AuthManager {
         task.resume()
     }
     public func refreshIfNeeded(completion: @escaping (Bool) -> Void) {
-        guard shouldRefreshToken else {
-            completion(true)
-            return
-        }
+        // guard shouldRefreshToken else {
+        //   completion(true)
+        //return
+        //}
         guard let refreshToken = self.refreshToken else {
             return
         }
@@ -152,11 +153,11 @@ final class AuthManager {
         task.resume()
         
     }
-    
     private func cacheToken(result: AuthResponse) {
         UserDefaults.standard.setValue(result.access_token, forKey: "access_token")
-        
+        if let refresh_token = result.refresh_token {
         UserDefaults.standard.setValue(result.refresh_token, forKey: "refresh_token")
+        }
         UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expires_in)),
         forKey: "expirationDate")
         
