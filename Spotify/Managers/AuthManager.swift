@@ -15,7 +15,7 @@ final class AuthManager {
         static let clientSecret = "b015b60e03504a4abc48704729489299"
         static let tokenAPIURL = "https://accounts.spotify.com/api/token"
         static let redirectURI = "https://blesseddairies.wixsite.com/rvit"
-        static let scopes = "user-read-private"
+        static let scopes = "user-read-private%20playlist-modify-public%20playlist-read-private%20playlist-modify-private%20user-follow-read%20user-library-modify%20user-library-read%20user-read-email"
         
     }
     
