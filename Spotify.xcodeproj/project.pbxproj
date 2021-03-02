@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81051B3A25ED047D00035C38 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81051B3925ED047D00035C38 /* SettingsModels.swift */; };
 		813B691625E7CEBB0053DA56 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B691525E7CEBB0053DA56 /* AuthResponse.swift */; };
 		8164D6DB25E3DDF400E280E2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8164D6DA25E3DDF400E280E2 /* TabBarViewController.swift */; };
 		8164D6DE25E3DE5A00E280E2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8164D6DD25E3DE5A00E280E2 /* SearchViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81051B3925ED047D00035C38 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		813B691525E7CEBB0053DA56 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		8164D6DA25E3DDF400E280E2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8164D6DD25E3DE5A00E280E2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				8164D70A25E3E39400E280E2 /* Artist.swift */,
 				8164D70D25E3E3B400E280E2 /* UserProfile.swift */,
 				813B691525E7CEBB0053DA56 /* AuthResponse.swift */,
+				81051B3925ED047D00035C38 /* SettingsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				8164D71225E5266B00E280E2 /* Extensions.swift in Sources */,
 				8164D6E225E3DF3300E280E2 /* LibraryViewController.swift in Sources */,
 				8164D70B25E3E39400E280E2 /* Artist.swift in Sources */,
+				81051B3A25ED047D00035C38 /* SettingsModels.swift in Sources */,
 				8164D6F625E3E0EB00E280E2 /* PlaylistViewController.swift in Sources */,
 				8169D14625E3D66000D5142A /* SceneDelegate.swift in Sources */,
 				8164D6F325E3E0B300E280E2 /* PlayerViewController.swift in Sources */,
